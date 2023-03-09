@@ -125,11 +125,12 @@ const boton = document.getElementById('boton');
 boton.addEventListener('click', () => {
    mostrarTraduccion(idioma);
 });
-
 function mostrarTraduccion(idioma) {
-    const textarea = document.querySelector("textarea");
-    const randomIndex = Math.floor(Math.random() * idioma.length);
-    const traduccion = idioma[randomIndex].traduccion;
-    textarea.value = traduccion;
-  }
-
+  const h3 = document.querySelector("h3");
+  const textarea = document.querySelector("textarea");
+  const randomIndex = Math.floor(Math.random() * idioma.length);
+  const traduccion = idioma[randomIndex].traduccion;
+  const idiomaSeleccionado = idioma[randomIndex].idioma;
+  h3.innerHTML = idiomaSeleccionado; // Agregar contenido de idioma al elemento h3
+  textarea.value = traduccion;
+}
